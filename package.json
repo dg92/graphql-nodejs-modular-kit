@@ -1,0 +1,42 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "Graphql test with tabel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "NODE_PATH=. babel-node migrate.js"
+  },
+  "author": "Deepak Gupta (ideepak.jsd@gmail.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-eslint": "^4.1.6",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "eslint": "^1.10.3",
+    "eslint-plugin-babel": "^3.0.0",
+    "eslint-plugin-react": "^3.12.0"
+  },
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.15.2",
+    "cors": "^2.7.1",
+    "crypto": "0.0.3",
+    "express": "^4.14.0",
+    "is-email": "^1.0.0",
+    "is-uuid": "^1.0.2",
+    "lodash": "^4.13.1",
+    "pg": "^6.0.1",
+    "rand-token": "^0.2.1",
+    "request-promise": "^3.0.0",
+    "tabel": "^1.6.1",
+    "express-graphql": "^0.6.11",
+    "graphql": "^0.12.3",
+    "graphql-tools": "^2.19.0"
+  }
+}

@@ -1,0 +1,9 @@
+/node_modules
+npm-debug.log
+/*.pid
+/forever
+/*.metadata.json
+.DS_Store
+dump.rdb
+/package-lock.json
+config.js
