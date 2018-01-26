@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "migrate": "NODE_PATH=. babel-node migrate.js"
+    "migrate": "NODE_PATH=. babel-node migrate.js",
+    "server": "NODE_PATH=. nodemon --exec babel-node ./app/server.js"
   },
   "author": "Deepak Gupta (ideepak.jsd@gmail.com)",
   "license": "ISC",
@@ -19,24 +20,27 @@
     "babel-preset-stage-0": "^6.5.0",
     "eslint": "^1.10.3",
     "eslint-plugin-babel": "^3.0.0",
-    "eslint-plugin-react": "^3.12.0"
+    "eslint-plugin-react": "^3.12.0",
+    "nodemon": "^1.12.5"
   },
   "dependencies": {
+    "apollo-server-express": "^1.3.2",
     "bcrypt": "^0.8.7",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.15.2",
     "cors": "^2.7.1",
     "crypto": "0.0.3",
+    "errorhandler": "^1.4.3",
     "express": "^4.14.0",
+    "graphql": "^0.11.7",
+    "graphql-tools": "^2.19.0",
     "is-email": "^1.0.0",
     "is-uuid": "^1.0.2",
     "lodash": "^4.13.1",
+    "merge-graphql-schemas": "^1.4.0",
     "pg": "^6.0.1",
     "rand-token": "^0.2.1",
     "request-promise": "^3.0.0",
-    "tabel": "^1.6.1",
-    "express-graphql": "^0.6.11",
-    "graphql": "^0.12.3",
-    "graphql-tools": "^2.19.0"
+    "tabel": "^1.6.1"
   }
 }
