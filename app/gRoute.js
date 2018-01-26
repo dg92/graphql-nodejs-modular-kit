@@ -12,6 +12,8 @@ const schema = makeExecutableSchema({
   resolvers
 });
 
+app.get('/', (req, res) => res.send('server up and running... go to /graphiql'))
+
 app.use('/graphql', graphqlExpress({
   schema: schema
 }));

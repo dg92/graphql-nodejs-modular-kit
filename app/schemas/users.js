@@ -5,19 +5,22 @@ export default `
   }
 
   type Query {
-    allUsers: [User]!,
-    getUser(userId: ID!): User!
+    getUserById(userId: ID!): User!
   }
 
+  type authErrors {
+    email : String,
+    password: String
+  }
 
-  type LoginResponse {
-    msg: String!,
-    token: String!,
-    errors: [Error!]
+  type authResponse {
+    token: String,
+    user: User,
+    errors: authErrors
   }
 
   type Mutation {
-    register(email: String!, password: String!) : User!,
-    login(email: String!, password: String!) : LoginResponse!
+    signupUser(email: String!, password: String!) : authResponse!,
+    login(email: String!, password: String!) : authResponse!
   }
 `;

@@ -41,6 +41,7 @@
     "pg": "^6.0.1",
     "rand-token": "^0.2.1",
     "request-promise": "^3.0.0",
+    "shape-errors": "^1.2.0",
     "tabel": "^1.6.1"
   }
 }

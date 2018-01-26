@@ -1,28 +1,31 @@
-const {table} = require('app/orm');
-
+const {
+  findUserById,
+  login,
+  signup
+} = require('app/actions/users'); 
 
 export default {
   Query: {
-    getUser: (parent, {userId}) => {
-      return table('users').find({id: userId}).then((user) => user);
-    },
-    allUsers: (parent, args) => {
-      return table('users').all().then((users) => {
-        console.log(users)
-        return users;
-      });
-    }
+    getUserById: (parent, {userId}) => findUserById(userId)
   },
   Mutation: {
-    register: (parent, {email, password}) => {
-      console.log(email, password)
-      return table('users').insert({email, password}).then((user) => {
-        console.log(user)
-        return {
-          id: user.id,
-          email: user.email
-        }
+    signupUser: (parent, {email, password}) => {
+      return signup({email, password})
+      .then(({token, user}) => {
+        return {token, user, errors: null};
       })
-    }
+      .catch((errors) => {
+        return {token: null, user: null, errors};
+      })
+    },
+    login: (parent, {email, password}) => {
+      return login({email, password})
+      .then(({token, user}) => {
+        return {token, user, errors: null};
+      })
+      .catch((errors) => {
+        return {token: null, user: null, errors};
+      })
+    } 
   }
 }
