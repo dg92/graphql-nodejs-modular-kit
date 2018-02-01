@@ -1,26 +1,27 @@
 export default `
   type User {
     id: ID!,
-    email: String!
+    email: String!,
+    posts: [Post!]
   }
 
   type Query {
     getUserById(userId: ID!): User!
   }
 
-  type authErrors {
+  type AuthErrors {
     email : String,
     password: String
   }
 
-  type authResponse {
+  type AuthResponse {
     token: String,
     user: User,
     errors: authErrors
   }
 
   type Mutation {
-    signupUser(email: String!, password: String!) : authResponse!,
-    login(email: String!, password: String!) : authResponse!
+    signupUser(email: String!, password: String!) : AuthResponse!,
+    login(email: String!, password: String!) : AuthResponse!
   }
 `;
